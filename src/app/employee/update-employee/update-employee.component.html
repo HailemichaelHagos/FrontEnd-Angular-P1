@@ -1,0 +1,110 @@
+<div class="container m-5">
+    <div class="card-header bg-primary text-white">Update a Employee</div>
+    <form #myFormTemplate="ngForm" (ngSubmit)="updateEmployee()">
+            <div class="card-body">   
+                <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">Employee ID :</label>
+                    {{ newEmployee.empId }}
+                    </div>
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Employee Email:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="email" 
+                        placeholder="Enter employee email" 
+                        name="email"
+                        required
+                        #myEmail="ngModel"
+                        (change)="test(myEmail)"
+                        [(ngModel)]="newEmployee.email">
+                    <div *ngIf="!myEmail.valid" class="small text-danger">Employee Email is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="password" class="form-label">Employee Password:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="password" 
+                        placeholder="Enter employee password" 
+                        name="password"
+                        required
+                        #myPassword="ngModel"
+                        [(ngModel)]="newEmployee.password">
+                        <div *ngIf="!myPassword.valid" class="small text-danger">employee Password is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="firstname" class="form-label">Employee FirstName:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="firstname" 
+                            placeholder="Enter employee firstname" 
+                            name="firstname"
+                            required
+                            #myFirstName="ngModel"
+                            [(ngModel)]="newEmployee.firstname">
+                            <div *ngIf="!myFirstName.valid" class="small text-danger">employee FirstName is required!</div>
+                        </div>
+                        
+                    <div class="mb-3 mt-3">
+                    <label for="lastname" class="form-label">Employee LastName:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="lastname" 
+                        placeholder="Enter employee lastname" 
+                        name="lastname"
+                        required
+                        #myLastName="ngModel"
+                        [(ngModel)]="newEmployee.lastname">
+                        <div *ngIf="!myLastName.valid" class="small text-danger">Employee LastName is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                    <label for="contact" class="form-label">Employee Contact:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="contact" 
+                        placeholder="Enter book cost" 
+                        name="empContact"
+                        required
+                        #myContact="ngModel"
+                        [(ngModel)]="newEmployee.empContact">
+                        <div *ngIf="!myContact.valid" class="small text-danger">Employee Contact is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="address" class="form-label">Employee Address:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="address" 
+                            placeholder="Enter employee address" 
+                            name="empAddress"
+                            required
+                            #myAddress="ngModel"
+                            [(ngModel)]="newEmployee.empAddress">
+                            <div *ngIf="!myAddress.valid" class="small text-danger">Employee Address is required!</div>
+                        </div>
+                    <div class="mb-3 mt-3">
+                    <label for="image" class="form-label">Employee Image URL:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="image" 
+                        placeholder="Enter employee image URL" 
+                        name="empImageUrl"
+                        required
+                        #myImage="ngModel"
+                        [(ngModel)]="newEmployee.empImageUrl">
+                        <div *ngIf="!myImage.valid" class="small text-danger">Employee Image URL is required!</div>
+                    </div>
+                </div>
+            <div class="card-footer bg-primary">
+                <!-- <button type="button" class="btn btn-light" (click)="updateEmployee()"> -->
+                <button [disabled]="!myFormTemplate.valid" type="submit" class="btn btn-light">
+                    UPDATE
+                </button>
+            </div>
+        </form>
+</div>

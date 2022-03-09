@@ -1,0 +1,46 @@
+
+
+<div class="container">
+    <h3>View Employees Component</h3>
+   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of allEmployees">
+                <td>{{ employee.empId }}</td>
+                <td><img [src]="employee.empImageUrl" width="80px" height="50px"/></td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.password }}</td>
+                <td>{{ employee.firstname }}</td>
+                <td>{{ employee.lastname }}</td>
+                <td>{{ employee.empContact }}</td>
+                <td>{{ employee.empAddress }}</td>
+                <td>
+                    <button 
+                        type="button" 
+                        class="btn btn-primary"
+                        (click)="goToEditEmployee(employee.empId)">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </td>
+                 <td><button 
+                        type="button" 
+                        class="btn btn-danger" 
+                        (click)="deleteEmployee(employee.empId)"><i class="material-icons">delete</i></button></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

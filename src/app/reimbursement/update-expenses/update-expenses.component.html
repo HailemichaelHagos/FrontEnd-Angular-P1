@@ -1,0 +1,108 @@
+
+
+<div class="container m-5">
+    <div class="card-header bg-primary text-white">Approve Request</div>
+    <form #myFormTemplate="ngForm" (ngSubmit)="updateExpense()">
+            <div class="card-body">   
+                <div class="mb-3 mt-3">
+                    <label for="rmb" class="form-label">Employee ID :</label>
+                    {{ newExpense.rmbId }}
+                    </div>
+                <div class="mb-3 mt-3">
+                    <label for="type" class="form-label">Expense Type:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="type" 
+                        placeholder="Enter employee type" 
+                        name="rmbType"
+                        required
+                        #myType="ngModel"
+                        (change)="test(myType)"
+                        [(ngModel)]="newExpense.rmbType">
+                    <div *ngIf="!myType.valid" class="small text-danger">Expense Type is required!</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="status" class="form-label">Status:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="status" 
+                        placeholder="Enter employee password" 
+                        name="status"
+                        required
+                        #myStatus="ngModel"
+                        [(ngModel)]="newExpense.status">
+                        <div *ngIf="!myStatus.valid" class="small text-danger">Status is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="amount" class="form-label">Amount:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="amount" 
+                            placeholder="Enter employee firstname" 
+                            name="firstname"
+                            required
+                            #myAmount="ngModel"
+                            [(ngModel)]="newExpense.amount">
+                            <div *ngIf="!myAmount.valid" class="small text-danger">Amount is required!</div>
+                        </div>
+                        
+                    <div class="mb-3 mt-3">
+                    <label for="date" class="form-label">Date:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="date" 
+                        placeholder="Enter date" 
+                        name="date"
+                        required
+                        #myDate="ngModel"
+                        [(ngModel)]="newExpense.date">
+                        <div *ngIf="!myDate.valid" class="small text-danger">Date is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                    <label for="empid" class="form-label">empID:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="empid" 
+                        placeholder="Enter Id" 
+                        name="empId"
+                        required
+                        #myId="ngModel"
+                        [(ngModel)]="newExpense.empId">
+                        <div *ngIf="!myId.valid" class="small text-danger">empID is required!</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="mngid" class="form-label">mngID Address:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="mngid" 
+                            placeholder="Enter mngId" 
+                            name="mngId"
+                            required
+                            #myMmgId="ngModel"
+                            [(ngModel)]="newExpense.mngId">
+                            <div *ngIf="!myMmgId.valid" class="small text-danger">mngID is required!</div>
+                        </div>
+                    <div class="mb-3 mt-3">
+                        <label for="action" class="form-label">Action: </label>
+                        <select name="action" id="action"  #myAction="ngModel" [(ngModel)]="newExpense.action" >
+                          <option value="pending" > pending</option>
+                          <option value="Approved" >Approved</option>
+                          <option value="Denied" >Denied</option>
+                          <div *ngIf="!myAction.valid" class="small text-danger">Action is required!</div>
+                        </select>
+                    </div>
+                </div>
+            <div class="card-footer bg-primary">
+                <!-- <button type="button" class="btn btn-light" (click)="updateEmployee()"> -->
+                <button [disabled]="!myFormTemplate.valid" type="submit" class="btn btn-light">
+                    UPDATE
+                </button>
+            </div>
+        </form>
+</div>

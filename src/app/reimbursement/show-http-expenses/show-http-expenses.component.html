@@ -1,0 +1,131 @@
+
+<div class="container">
+  <h3>List Reimbursment Component</h3>
+
+  <div>
+      <button type="button" class="btn btn-success" (click)="toggleAddForm()">Submit Reimbursment Request</button>
+      <div class="card m-5" *ngIf="toggleAdd">
+          <div class="card-header bg-success text-white">Add a Reimbursment</div>
+          <div class="card-body">
+              <form>
+                 
+                    <div class="mb-3 mt-3">
+                      <label for="type" class="form-label">Expense Type:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="type" 
+                        placeholder="Enter expense type" 
+                        name="rmbType"
+                        [(ngModel)]="newExpense.rmbType">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="status" class="form-label">Expense status:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="status" 
+                        placeholder="Enter expense status" 
+                        name="status"
+                        [(ngModel)]="newExpense.status">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="amount" class="form-label">Expense Amount:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="amount" 
+                        placeholder="Enter expense amount" 
+                        name="amount"
+                        [(ngModel)]="newExpense.amount">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="date" class="form-label">Expense Date:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="date" 
+                        placeholder="Enter expense date" 
+                        name="date"
+                        [(ngModel)]="newExpense.date">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="empId" class="form-label">Expense empId:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="empId" 
+                        placeholder="Enter expense Id" 
+                        name="empId"
+                        [(ngModel)]="newExpense.empId">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="mngid" class="form-label">Expense mngId:</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="mngid" 
+                        placeholder="Enter Expense mngId" 
+                        name="mngId"
+                        [(ngModel)]="newExpense.mngId">
+                    </div>
+                    <div class="mb-3 mt-3">
+                      <label for="action" class="form-label">Action: </label>
+                        <select name="action" id="action" [(ngModel)]="newExpense.action" >
+                          <option value="pending" > pending</option>
+                          <option value="Approved" >Approved</option>
+                          <option value="Denied" >Denied</option>
+                        </select>
+                      </div>
+                  
+                </form>
+          </div>
+          <div class="card-footer bg-success">
+              <button type="button" class="btn btn-light" (click)="addExpense()">
+                  SUBMIT
+              </button>
+          </div>
+      </div>
+
+  </div>
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>ReimID</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>empID</th>
+              <th>mngID</th>
+              <th>Action</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let expense of allExpenses">
+              <td>{{ expense.rmbId }}</td>
+              <td>{{ expense.rmbType }}</td>
+              <td>{{ expense.status }}</td>
+              <td>{{ expense.amount }}</td>
+              <td>{{ expense.date }}</td>
+              <td>{{ expense.empId }}</td>
+              <td>{{ expense.mngId}}</td>
+              <td>{{ expense.action}}</td>
+              <td>
+                  <button 
+                      type="button" 
+                      class="btn btn-primary"
+                      (click)="goToEditExpense(expense.rmbId)">
+                      <i class="material-icons">edit</i>
+                  </button>
+              </td>
+               <td><button 
+                      type="button" 
+                      class="btn btn-danger" 
+                      (click)="deleteExpense(expense.rmbId)"><i class="material-icons">delete</i></button></td> 
+          </tr>
+      </tbody>
+  </table>
+</div>
