@@ -47,25 +47,25 @@ export class ViewHttpEmployeesComponent implements OnInit {
   }
 
   
-  toggleApproveRequestForm(){
+  // toggleApproveRequestForm(){
 
-  }
+  // }
 
-  toggleDenyRequestForm(){
+  // toggleDenyRequestForm(){
 
-  }
-  toggleViewPendingForm(){
+  // }
+  // toggleViewPendingForm(){
 
-  }
-  toggleViewResolvedForm(){
+  // }
+  // toggleViewResolvedForm(){
 
-  }
-  toggleViewSpecificForm(){
+  // }
+  // toggleViewSpecificForm(){
 
-  }
-  toggleViewEmployees(){
+  // }
+  // toggleViewEmployees(){
   
-  }
+  // }
 
 
   goToEditEmployee(empId: number){
