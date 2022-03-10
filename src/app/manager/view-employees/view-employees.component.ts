@@ -16,14 +16,24 @@ export class ViewEmployeesComponent implements OnInit {
   toggleAdd: boolean = false;
 
   newEmployee: Employee = {
-    empId: 0,
-    password: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    empContact: "",
-    empAddress: "",
-    empImageUrl: ""
+    // empId: 0,
+    // password: "",
+    // // email: "",
+    // firstname: "",
+    // lastname: "",
+    // empContact: "",
+    // empAddress: "",
+    // empImageUrl: ""
+
+    employeeId: 0,
+    //email: string,
+    employeePassword: "",
+    employeeFirstName: "",
+   employeeLastName: "",
+    employeeContact: "",
+    employeeAddress: "",
+    employeeImageUrl: ""
+
   }
   //commenting this line because we can use private in front of the parameter
   //bookService: BookService;
@@ -39,15 +49,17 @@ export class ViewEmployeesComponent implements OnInit {
 
   // not used anywhere, just to show how an object literal is created
   oneEmployee: Employee = {
-    empId: 101,
-    email: "samia@gmail",
-    password:"sm22",
-    firstname: "samia",
-    lastname: "johan",
-    empContact: "samia@gmail",
-    empAddress: "NewYork",
-    empImageUrl: "https://images.unsplash.com/photo-1611676279444-5577698aa13c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-  };
+    
+     
+      employeeId: 101,
+     // email: "samia@gmail",
+     employeePassword:"sm22",
+     employeeFirstName: "samia",
+     employeeLastName: "johan",
+     employeeContact: "samia@gmail",
+     employeeAddress: "NewYork",
+      employeeImageUrl: "https://www.creativefaze.com/sites/default/files/android-app-developer-Specialist111.jpg"
+    };
 
 
   
@@ -92,28 +104,28 @@ export class ViewEmployeesComponent implements OnInit {
   }
 
 
-  goToEditEmployee(empId: number){
+  goToEditEmployee(employeeId: number){
     // here we have to route to UpdateEmployeeComponent whose route path is employee-update
     // to use this.router.navigate(), inject Router in the constructor
-    this.router.navigate(['employee-update', empId]);
+    this.router.navigate(['employee-update', employeeId]);
   }
 
-  deleteEmployee(empId: number){
-   this.allEmployees = this.employeeService.deleteEmployee(empId);
+  deleteEmployee(employeeId: number){
+   this.allEmployees = this.employeeService.deleteEmployee(employeeId);
   }
 
   addEmployee(){
     // doing this because am working with arrays, otherwise not required
     let addNewEmployee: Employee = {
 
-      empId: 0,
-      password: this.newEmployee.password,
-      email: this.newEmployee.email,
-      firstname: this.newEmployee.firstname,
-      lastname: this.newEmployee.lastname,
-      empContact: this.newEmployee.empContact,
-      empAddress: this.newEmployee.empAddress,
-      empImageUrl: this.newEmployee.empImageUrl
+      employeeId: 0,
+      employeePassword: this.newEmployee.employeePassword,
+    //  email: this.newEmployee.email,
+    employeeFirstName: this.newEmployee.employeeFirstName,
+    employeeLastName: this.newEmployee.employeeLastName,
+    employeeContact: this.newEmployee.employeeContact,
+    employeeAddress: this.newEmployee.employeeAddress,
+    employeeImageUrl: this.newEmployee.employeeImageUrl
     }
 
     this.employeeService.addEmployee(addNewEmployee);

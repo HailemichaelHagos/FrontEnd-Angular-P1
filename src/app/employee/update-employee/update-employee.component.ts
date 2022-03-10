@@ -11,14 +11,24 @@ import { EmployeeService } from '../employee.service';
 export class UpdateEmployeeComponent implements OnInit {
 
   newEmployee: Employee = {
-    empId: 0,
-    password: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    empContact: "",
-    empAddress: "",
-    empImageUrl: ""
+  //   empId: 0,
+  //   password: "",
+  //  // email: "",
+  //   firstname: "",
+  //   lastname: "",
+  //   empContact: "",
+  //   empAddress: "",
+  //   empImageUrl: ""
+  employeeId: 0,
+  //email: string,
+  employeePassword: "",
+  employeeFirstName: "",
+ employeeLastName: "",
+  employeeContact: "",
+  employeeAddress: "",
+  employeeImageUrl: ""
+
+
   }
 
   constructor(private activatedRoute: ActivatedRoute, 
@@ -27,15 +37,15 @@ export class UpdateEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
         // to take out the route parameter, we need to inject ActivatedRoute in the constructor
-        let empId: any = this.activatedRoute.snapshot.paramMap.get("myId");
-        console.log(empId);
+        let employeeId: any = this.activatedRoute.snapshot.paramMap.get("myId");
+        console.log(employeeId);
         // fetch the employee with the empId from the service layer
-        this.newEmployee = this.employeeService.fetchAEmployee(empId);
+        this.newEmployee = this.employeeService.fetchAEmployee(employeeId);
   }
 
-  test(myEmail: any){
-    console.log(myEmail);
-  }
+  // test(myEmail: any){
+  //   console.log(myEmail);
+  // }
   
   updateEmployee(){
     this.employeeService.updateEmployee(this.newEmployee);

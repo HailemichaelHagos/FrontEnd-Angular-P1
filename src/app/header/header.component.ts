@@ -18,9 +18,21 @@ export class HeaderComponent implements OnInit {
     return this.authService.loggedIn;
   }
 
+  // getRole(): string{
+  //   let data: User = this.authService.retrieveUser();
+  //   return data.role;
+  // }
+
   getRole(): string{
-    let data: User = this.authService.retrieveUser();
-    return data.role;
+    if(this.authService.managerRole){
+      return "manager";
+    }else if(this.authService.employeeRole){
+      return "employee";
+    }
+      return "";
+
   }
 
+
+//  retrieveEmployeeUser
 }

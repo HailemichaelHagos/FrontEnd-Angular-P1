@@ -9,7 +9,7 @@
             <div class="card-body">
                 <form>
                    
-                      <div class="mb-3 mt-3">
+                      <!-- <div class="mb-3 mt-3">
                         <label for="email" class="form-label">Manager Email:</label>
                         <input 
                           type="text" 
@@ -18,7 +18,7 @@
                           placeholder="Enter manager email" 
                           name="email"
                           [(ngModel)]="newManager.email">
-                      </div>
+                      </div> -->
                       <div class="mb-3 mt-3">
                         <label for="password" class="form-label">Manager Password:</label>
                         <input 
@@ -27,7 +27,7 @@
                           id="password" 
                           placeholder="Enter manager password" 
                           name="password"
-                          [(ngModel)]="newManager.password">
+                          [(ngModel)]="newManager.managerPassword">
                       </div>
                       <div class="mb-3 mt-3">
                         <label for="firstname" class="form-label">Manager FirstName:</label>
@@ -37,7 +37,7 @@
                           id="firstname" 
                           placeholder="Enter manager firstname" 
                           name="firstname"
-                          [(ngModel)]="newManager.firstname">
+                          [(ngModel)]="newManager.managerFirstName">
                       </div>
                       <div class="mb-3 mt-3">
                         <label for="lastname" class="form-label">Manager LasttName:</label>
@@ -47,7 +47,7 @@
                           id="lastname" 
                           placeholder="Enter manager Lasttname" 
                           name="lastname"
-                          [(ngModel)]="newManager.lastname">
+                          [(ngModel)]="newManager.managerLastName">
                       </div>
                       <div class="mb-3 mt-3">
                         <label for="contact" class="form-label">Manager Contact:</label>
@@ -57,7 +57,7 @@
                           id="contact" 
                           placeholder="Enter manager empContact" 
                           name="contact"
-                          [(ngModel)]="newManager.mngContact">
+                          [(ngModel)]="newManager.managerContact">
                       </div>
                       <div class="mb-3 mt-3">
                         <label for="address" class="form-label">Employee Address:</label>
@@ -67,7 +67,7 @@
                           id="address" 
                           placeholder="Enter manager mngDdress" 
                           name="address"
-                          [(ngModel)]="newManager.mngAddress">
+                          [(ngModel)]="newManager.managerAddress">
                       </div>
                       <div class="mb-3 mt-3">
                         <label for="image" class="form-label">Manager Image URL:</label>
@@ -77,7 +77,7 @@
                           id="image" 
                           placeholder="Enter manager image URL" 
                           name="bookImageUrl"
-                          [(ngModel)]="newManager.mngImageUrl">
+                          [(ngModel)]="newManager.managerImageUrl">
                       </div>
                     
                   </form>
@@ -95,7 +95,7 @@
             <tr>
                 <th>ID</th>
                 <th>Image</th>
-                <th>Email</th>
+                <!-- <th>Email</th> -->
                 <th>Password</th>
                 <th>FirstName</th>
                 <th>LasttName</th>
@@ -107,27 +107,28 @@
         </thead>
         <tbody>
             <tr *ngFor="let manager of allManagers">
-                <td>{{ manager.mngId }}</td>
-                <td><img [src]="manager.mngImageUrl" width="80px" height="50px"/></td>
-                <td>{{ manager.email }}</td>
-                <td>{{ manager.password }}</td>
-                <td>{{ manager.firstname }}</td>
-                <td>{{ manager.lastname }}</td>
-                <td>{{ manager.mngContact }}</td>
-                <td>{{ manager.mngAddress }}</td>
+                <td>{{ manager.managerId }}</td>
+                <td><img [src]="manager.managerImageUrl" width="80px" height="50px"/></td>
+                <!-- <td>{{ manager.email }}</td> -->
+                <td>{{ manager.managerPassword }}</td>
+                <td>{{ manager.managerFirstName }}</td>
+                <td>{{ manager.managerLastName }}</td>
+                <td>{{ manager.managerContact }}</td>
+                <td>{{ manager.managerImageUrl }}</td>
                 <td>
                     <button 
                         type="button" 
                         class="btn btn-primary"
-                        (click)="goToEditManager(manager.mngId)">
+                        (click)="goToEditManager(manager.managerId)">
                         <i class="material-icons">edit</i>
                     </button>
                 </td>
                  <td><button 
                         type="button" 
                         class="btn btn-danger" 
-                        (click)="deleteManager(manager.mngId)"><i class="material-icons">delete</i></button></td> 
+                        (click)="deleteManager(manager.managerId)"><i class="material-icons">delete</i></button></td> 
             </tr>
         </tbody>
     </table>
 </div>
+

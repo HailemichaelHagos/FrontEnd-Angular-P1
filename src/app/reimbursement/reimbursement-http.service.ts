@@ -21,7 +21,7 @@ export class ReimbursementHttpService {
   }
 
   addExpense(expenseModel: Reimbursement): Observable<Reimbursement>{
-    return this.http.post<Reimbursement>("http://localhost:4040/api/expenses", JSON.stringify(expenseModel));
+    return this.http.post<Reimbursement>("http://localhost:4040/employees/submit", JSON.stringify(expenseModel));
   }
 
   updateExpense(expenseModel: Reimbursement): Observable<Reimbursement>{

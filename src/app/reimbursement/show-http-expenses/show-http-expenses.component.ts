@@ -14,15 +14,22 @@ export class ShowHttpExpensesComponent implements OnInit {
   toggleAdd: boolean = false;
 
   newExpense: Reimbursement = {
-    rmbId: 0,
-    rmbType: "",
-    status: "",
-    amount: 0,
-    date: "",
-    empId: 0,
-    mngId: 0,
-    action: "pending"
-    
+    // rmbId: 0,
+    // rmbType: "",
+    // status: "",
+    // amount: 0,
+    // date: "",
+    // empId: 0,
+    // mngId: 0,
+    // action: "pending"
+
+    reimbursementId: 0,
+    requestingEmployeeId: 0,
+    reimbursementAmount: 0,
+    requestApproved: true,
+    dateOfRequest: "",
+    dateResolved: ""
+
   }
 
 
@@ -31,58 +38,63 @@ export class ShowHttpExpensesComponent implements OnInit {
 
   // Dependency Injection (DI)
   constructor(private reimbursementHttpService: ReimbursementHttpService, private router: Router) {
- 
-   }
+
+  }
 
   ngOnInit(): void {
     this.loadAllExpenses();
   }
-  loadAllExpenses(){
-    this.reimbursementHttpService.fetchAllExpenses().subscribe((response)=>{
+  loadAllExpenses() {
+    this.reimbursementHttpService.fetchAllExpenses().subscribe((response) => {
       // the response that we receive here is an array of Reimbursement
       console.log(response);
       this.allExpenses = response;
     });
   }
-  
-  toggleAddForm(){
-    if(this.toggleAdd){
+
+  toggleAddForm() {
+    if (this.toggleAdd) {
       this.toggleAdd = false;
-    }else{
+    } else {
       this.toggleAdd = true;
     }
   }
 
 
-  goToEditExpense(rmbId: number){
-    this.router.navigate(['expense-http-update', rmbId]);
+  goToEditExpense(reimbursementId: number) {
+    this.router.navigate(['expense-http-update', reimbursementId]);
   }
 
-  deleteExpense(rmbId: number){
-   this.reimbursementHttpService.deleteExpense(rmbId).subscribe((response)=>{
-     console.log(response);
-     
-     this.loadAllExpenses();
-   })
-  }
-  
-  addExpense(){
-    this.reimbursementHttpService.addExpense(this.newExpense).subscribe((response)=>{
+  deleteExpense(reimbursementId: number) {
+    this.reimbursementHttpService.deleteExpense(reimbursementId).subscribe((response) => {
       console.log(response);
-      this.newExpense = {
-       
-        rmbId: 0,
-        rmbType: "",
-        status: "",
-        amount: 0,
-        date: "",
-        empId: 0,
-        mngId: 0,
-        action: "pending"
 
-     }
       this.loadAllExpenses();
     })
-   }
- }
- 
+  }
+
+  addExpense() {
+    this.reimbursementHttpService.addExpense(this.newExpense).subscribe((response) => {
+      console.log(response);
+      this.newExpense = {
+
+        // rmbId: 0,
+        // rmbType: "",
+        // status: "",
+        // amount: 0,
+        // date: "",
+        // empId: 0,
+        // mngId: 0,
+        // action: "pending"
+        reimbursementId: 0,
+        requestingEmployeeId: 0,
+        reimbursementAmount: 0,
+        requestApproved: true,
+        dateOfRequest: "",
+        dateResolved: ""
+
+      }
+      this.loadAllExpenses();
+    })
+  }
+}

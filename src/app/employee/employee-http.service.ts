@@ -15,7 +15,7 @@ export class EmployeeHttpService {
 
   fetchAllEmployees(): Observable<Employee[]>{
     // we need to work with HttpClient to consume an endpoint
-    return this.http.get<Employee[]>("http://localhost:4040/api/employees");
+    return this.http.get<Employee[]>("http://localhost:4040/managers/fetchAllEmp");
   }
 
   deleteEmployee(empId: number): Observable<Employee>{
@@ -27,7 +27,7 @@ export class EmployeeHttpService {
   }
 
   updateEmployee(employeeModel: Employee): Observable<Employee>{
-    return this.http.put<Employee>("http://localhost:4040/employees/updateEmp/", JSON.stringify(employeeModel));
+    return this.http.put<Employee>("http://localhost:4040/employees/updateEmp", JSON.stringify(employeeModel));
   }
 
   fetchAEmployee(empId: number): Observable<Employee>{

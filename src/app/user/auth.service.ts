@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Employee } from '../employee/employee.model';
+import { Manager } from '../manager/manager.model';
 import { User } from './user.model';
 
 @Injectable({
@@ -10,17 +12,32 @@ export class AuthService {
 constructor() { }
 
 loggedIn: boolean = false;
+managerRole: boolean = false;
+employeeRole: boolean = false;
 
-storeUser(user: User): void{
-  sessionStorage.setItem("userInfo", JSON.stringify(user));
+storeEmployeeUser(user: Employee): void{
+  sessionStorage.setItem("employeeInfo", JSON.stringify(user));
 }
 
-retrieveUser(): User{
-  let data: any = sessionStorage.getItem("userInfo");
+storeManagerUser(user: Manager): void{
+  sessionStorage.setItem("managerInfo", JSON.stringify(user));
+}
+
+retrieveEmployeeUser(): User{
+  let data: any = sessionStorage.getItem("employeeInfo");
   return JSON.parse(data);
 }
 
-destroyUser(): void{
-  sessionStorage.removeItem("userInfo");
+retrieveManagerUser(): User{
+  let data: any = sessionStorage.getItem("managerInfo");
+  return JSON.parse(data);
+}
+
+destroyEmployeeUser(): void{
+  sessionStorage.removeItem("employeeInfo");
+}
+
+destroyManagerUser(): void{
+  sessionStorage.removeItem("managerInfo");
 }
 }

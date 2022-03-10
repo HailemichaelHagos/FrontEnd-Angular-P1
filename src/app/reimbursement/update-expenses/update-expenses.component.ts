@@ -11,14 +11,21 @@ import { ReimbursementService } from '../reimbursement.service';
 export class UpdateExpensesComponent implements OnInit {
 
   newExpense: Reimbursement = {
-    rmbId: 11,
-      rmbType: "",
-      status: "",
-      amount: 0,
-      date: "",
-      empId: 0,
-      mngId: 0,
-      action: "pending"
+    // rmbId: 11,
+    //   rmbType: "",
+    //   status: "",
+    //   amount: 0,
+    //   date: "",
+    //   empId: 0,
+    //   mngId: 0,
+    //   action: "pending"
+    reimbursementId: 2,
+    requestingEmployeeId: 1,
+    reimbursementAmount: 300,
+    requestApproved: true,
+    dateOfRequest: "",
+    dateResolved: ""
+      
   }
 
   constructor(private activatedRoute: ActivatedRoute, 
@@ -27,15 +34,15 @@ export class UpdateExpensesComponent implements OnInit {
 
   ngOnInit(): void {
         // to take out the route parameter, we need to inject ActivatedRoute in the constructor
-        let rmbId: any = this.activatedRoute.snapshot.paramMap.get("myId");
-        console.log(rmbId);
-        // fetch the reimbursement with the empId from the service layer
-        this.newExpense = this.reimbursementService.fetchAExpense(rmbId);
+        let reimbursementId: any = this.activatedRoute.snapshot.paramMap.get("myId");
+        console.log(reimbursementId);
+        // fetch the reimbursement with the reimbursementId from the service layer
+        this.newExpense = this.reimbursementService.fetchAExpense(reimbursementId);
   }
 
-  test(myType: any){
-    console.log(myType);
-  }
+  // test(myType: any){
+  //   console.log(myType);
+  // }
   
   updateExpense(){
     this.reimbursementService.updateExpense(this.newExpense);

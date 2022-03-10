@@ -1,52 +1,52 @@
-<div class="container m-5">
+< <div class="container m-5">
     <div class="card-header bg-warning text-white">Update a Employee</div>
     <form #myFormTemplate="ngForm" (ngSubmit)="updateEmployee()">
         <div class="card-body">
             <div class="mb-3 mt-3">
                 <label for="title" class="form-label">Employee ID :</label>
-                {{ newEmployee.empId }}
+                {{ newEmployee.employeeId }}
             </div>
-            <div class="mb-3 mt-3">
+            <!-- <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Employee Email:</label>
                 <input type="text" class="form-control" id="email" placeholder="Enter employee email" name="email"
                     required #myEmail="ngModel" (change)="test(myEmail)" [(ngModel)]="newEmployee.email">
                 <div *ngIf="!myEmail.valid" class="small text-danger">Employee Email is required!</div>
-            </div>
+            </div> -->
             <div class="mb-3 mt-3">
                 <label for="password" class="form-label">employee Password:</label>
                 <input type="text" class="form-control" id="password" placeholder="Enter employee pasword"
-                    name="password" required #myPassword="ngModel" [(ngModel)]="newEmployee.password">
+                    name="password" required #myPassword="ngModel" [(ngModel)]="newEmployee.employeePassword">
                 <div *ngIf="!myPassword.valid" class="small text-danger">Employee Password is required!</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="firstname" class="form-label">Employee FirstName:</label>
                 <input type="text" class="form-control" id="firstname" placeholder="Enter employee firstname"
-                    name="firstname" required #myFirstName="ngModel" [(ngModel)]="newEmployee.firstname">
+                    name="firstname" required #myFirstName="ngModel" [(ngModel)]="newEmployee.employeeFirstName">
                 <div *ngIf="!myFirstName.valid" class="small text-danger">Employee FirstName is required!</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="lastname" class="form-label">Employee Lastname:</label>
                 <input type="text" class="form-control" id="lastname" placeholder="Enter employee lastname"
-                    name="lastname" required #myLastName="ngModel" [(ngModel)]="newEmployee.lastname">
+                    name="lastname" required #myLastName="ngModel" [(ngModel)]="newEmployee.employeeLastName">
                 <div *ngIf="!myLastName.valid" class="small text-danger">Employee LastName is required!</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="contact" class="form-label">Employee Contact:</label>
                 <input type="text" class="form-control" id="contact" placeholder="Enter employee lastname"
-                    name="contact" required #myContact="ngModel" [(ngModel)]="newEmployee.empContact">
+                    name="contact" required #myContact="ngModel" [(ngModel)]="newEmployee.employeeContact">
                 <div *ngIf="!myContact.valid" class="small text-danger">Employee Contact is required!</div>
             </div>
 
             <div class="mb-3 mt-3">
                 <label for="address" class="form-label">Employee Contact:</label>
                 <input type="text" class="form-control" id="address" placeholder="Enter employee lastname"
-                    name="empAddress" required #myAddress="ngModel" [(ngModel)]="newEmployee.empAddress">
+                    name="empAddress" required #myAddress="ngModel" [(ngModel)]="newEmployee.employeeAddress">
                 <div *ngIf="!myAddress.valid" class="small text-danger">Employee Address is required!</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="image" class="form-label">Employee Image URL:</label>
                 <input type="text" class="form-control" id="image" placeholder="Enter book image URL" name="empImageUrl"
-                    required #myImage="ngModel" [(ngModel)]="newEmployee.empImageUrl">
+                    required #myImage="ngModel" [(ngModel)]="newEmployee.employeeImageUrl">
                 <div *ngIf="!myImage.valid" class="small text-danger">Employee Image URL is required!</div>
             </div>
         </div>
@@ -57,4 +57,12 @@
             </button>
         </div>
     </form>
-</div>
+</div> 
+<!-- employeeId: 0,
+//email: string,
+employeePassword: "",
+employeeFirstName: "",
+employeeLastName: "",
+employeeContact: "",
+employeeAddress: "",
+employeeImageUrl: "" -->

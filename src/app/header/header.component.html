@@ -47,7 +47,7 @@
 
       <!-- <li class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='employee'">
       <a class="nav-link" routerLink="employee-crud">Employee Component</a></li> -->
-      <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='employee'">
+      <!-- <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='employee'">
        <li> <a class="nav-link" routerLink="employee-crud">Employee Component</a></li>
         <li><a class="nav-link" routerLink="show-reimb-expense"><button type="button" class="btn btn-primary" >Submit Request</button></a>
         </li>
@@ -59,18 +59,18 @@
         </li>
         <li><a class="nav-link" routerLink="show-reimb-expense"><button type="button" class="btn btn-primary" >ViewAllExpenses</button></a>
         </li> 
-      <!--<a class="nav-link" routerLink="employee-update/:myId"><button type="button" class="btn btn-danger" >Update info</button></a> -->
-      </ul>
+    
+      </ul> -->
       <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='employee'">
         <li><a class="nav-link" routerLink="employee-http-crud">Employee Http Component</a></li>
-        <li><a class="nav-link" routerLink="show-reimb-expense"> <button type="button" class="btn btn-primary" >Submit Request</button></a></li>
+        <li><a class="nav-link" routerLink="show-http-reimb-expense"> <button type="button" class="btn btn-primary" >Submit Request</button></a></li>
         <li><a class="nav-link" routerLink="view-http-pending"> <button type="button" class="btn btn-info" >View Pending Request</button></a></li>
         <li><a class="nav-link" routerLink="view-http-resolved"> <button type="button" class="btn btn-warning" >View Resolved Request</button></a></li>
         <li> <a class="nav-link" routerLink="view-http-info"> <button type="button" class="btn btn-primary" >View info</button></a></li>
-  <!--<a class="nav-link" routerLink="update-http-info"> <button type="button" class="btn btn-danger" >Update info</button></a> -->
+  
       </ul>
 
-        <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='manager'">
+        <!-- <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='manager'">
           <li><a class="nav-link" routerLink="view-employees">Manager Component</a>
           <li><a class="nav-link" routerLink="view-employees"><button type="button" class="btn btn-info" >All Employees</button></a></li>
           <li> <a class="nav-link" routerLink="reimbursment-crud"><button type="button" class="btn btn-success" >Approve</button></a></li>
@@ -78,7 +78,7 @@
           <li><a class="nav-link" routerLink="view-all-pending"> <button type="button" class="btn btn-info" >All Pending</button></a></li>
           <li><a class="nav-link" routerLink="view-all-resolved">  <button type="button" class="btn btn-warning" >All Resolved</button></a></li>
           <li>  <a class="nav-link" routerLink="view-specific-employee"> <button type="button" class="btn btn-success" >Specific Employee</button></a></li>
-        </ul>
+        </ul> -->
 
           <ul class="nav-item" *ngIf="isLoggedIn()==true && getRole()=='manager'">
             <li><a class="nav-link" routerLink="view-http-employees">Manager Http Component</a>

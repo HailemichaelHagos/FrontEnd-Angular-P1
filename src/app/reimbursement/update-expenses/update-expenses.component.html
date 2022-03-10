@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div class="container m-5">
     <div class="card-header bg-primary text-white">Approve Request</div>
@@ -6,7 +6,7 @@
             <div class="card-body">   
                 <div class="mb-3 mt-3">
                     <label for="rmb" class="form-label">Employee ID :</label>
-                    {{ newExpense.rmbId }}
+                    {{ newExpense.requestingEmployeeId }}
                     </div>
                 <div class="mb-3 mt-3">
                     <label for="type" class="form-label">Expense Type:</label>
@@ -19,7 +19,7 @@
                         required
                         #myType="ngModel"
                         (change)="test(myType)"
-                        [(ngModel)]="newExpense.rmbType">
+                        [(ngModel)]="newExpense.requestingEmployeeId">
                     <div *ngIf="!myType.valid" class="small text-danger">Expense Type is required!</div>
                 </div>
                 <div class="mb-3 mt-3">
@@ -99,10 +99,10 @@
                     </div>
                 </div>
             <div class="card-footer bg-primary">
-                <!-- <button type="button" class="btn btn-light" (click)="updateEmployee()"> -->
+             
                 <button [disabled]="!myFormTemplate.valid" type="submit" class="btn btn-light">
                     UPDATE
                 </button>
             </div>
         </form>
-</div>
+</div> -->

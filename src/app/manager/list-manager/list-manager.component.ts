@@ -14,14 +14,22 @@ export class ListManagerComponent implements OnInit {
   toggleAdd: boolean = false;
 
   newManager: Manager = {
-    mngId: 0,
-    password: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    mngContact: "",
-    mngAddress: "",
-    mngImageUrl: ""
+    // mngId: 0,
+    // password: "",
+    // email: "",
+    // firstname: "",
+    // lastname: "",
+    // mngContact: "",
+    // mngAddress: "",
+    // mngImageUrl: ""
+
+    managerId: 0,
+    managerPassword: "",
+    managerFirstName: "",
+    managerLastName: "",
+    managerContact: "",
+    managerAddress: "",
+    managerImageUrl: ""
   }
   //commenting this line because we can use private in front of the parameter
   //managerService: ManagerService;
@@ -36,15 +44,15 @@ export class ListManagerComponent implements OnInit {
    }
 
   // not used anywhere, just to show how an object literal is created
-  oneEmployee: Manager = {
-    mngId: 101,
-    email: "samia@gmail",
-    password:"sm22",
-    firstname: "samia",
-    lastname: "johan",
-    mngContact: "samia@gmail",
-    mngAddress: "NewYork",
-    mngImageUrl: "https://images.unsplash.com/photo-1611676279444-5577698aa13c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+  oneManager: Manager = {
+    managerId: 101,
+    //email: "samia@gmail",
+    managerPassword:"sm22",
+    managerFirstName: "samia",
+    managerLastName: "johan",
+    managerContact: "samia@gmail",
+    managerAddress: "NewYork",
+    managerImageUrl: "https://images.unsplash.com/photo-1611676279444-5577698aa13c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
   };
 
   
@@ -81,14 +89,15 @@ export class ListManagerComponent implements OnInit {
     // doing this because am working with arrays, otherwise not required
     let addNewManager: Manager = {
 
-      mngId: 0,
-      password: this.newManager.password,
-      email: this.newManager.email,
-      firstname: this.newManager.firstname,
-      lastname: this.newManager.lastname,
-      mngContact: this.newManager.mngContact,
-      mngAddress: this.newManager.mngAddress,
-      mngImageUrl: this.newManager.mngImageUrl
+      managerId: 0,
+      managerPassword: this.newManager.managerPassword,
+      // email: this.newManager.email,
+      managerFirstName: this.newManager.managerFirstName,
+      managerLastName: this.newManager.managerLastName,
+      managerContact: this.newManager.managerContact,
+      managerAddress: this.newManager.managerAddress,
+      managerImageUrl: this.newManager.managerImageUrl
+
     }
 
     this.managerService.addManager(addNewManager);

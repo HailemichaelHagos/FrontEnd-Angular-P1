@@ -15,14 +15,23 @@ export class ListHttpEmployeeComponent implements OnInit {
   toggleAdd: boolean = false;
 
   newEmployee: Employee = {
-    empId: 0,
-    password: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    empContact: "",
-    empAddress: "",
-    empImageUrl: ""
+  //   empId: 0,
+  //   password: "",
+  //  // email: "",
+  //   firstname: "",
+  //   lastname: "",
+  //   empContact: "",
+  //   empAddress: "",
+  //   empImageUrl: ""
+  employeeId: 0,
+  //email: string,
+  employeePassword: "",
+  employeeFirstName: "",
+ employeeLastName: "",
+  employeeContact: "",
+  employeeAddress: "",
+  employeeImageUrl: ""
+
   }
 
   constructor(private employeeHttpService: EmployeeHttpService, private router: Router) { }
@@ -62,12 +71,12 @@ export class ListHttpEmployeeComponent implements OnInit {
 
   }
   
-  goToEditEmployee(empId: number){
-    this.router.navigate(['employee-http-edit', empId]);
+  goToEditEmployee(employeeId: number){
+    this.router.navigate(['employee-http-edit', employeeId]);
   }
 
-  deleteEmployee(empId: number){
-   this.employeeHttpService.deleteEmployee(empId).subscribe((response)=>{
+  deleteEmployee(employeeId: number){
+   this.employeeHttpService.deleteEmployee(employeeId).subscribe((response)=>{
      console.log(response);
      
      this.loadAllEmployees();
@@ -78,14 +87,22 @@ export class ListHttpEmployeeComponent implements OnInit {
    this.employeeHttpService.addEmployee(this.newEmployee).subscribe((response)=>{
      console.log(response);
      this.newEmployee = {
-      empId: 0,
-      password: "",
-      email: "",
-      firstname: "",
-      lastname: "",
-      empContact: "",
-      empAddress: "",
-      empImageUrl: ""
+    //   empId: 0,
+    //   password: "",
+    //  // email: "",
+    //   firstname: "",
+    //   lastname: "",
+    //   empContact: "",
+    //   empAddress: "",
+    //   empImageUrl: ""
+    employeeId: 0,
+    //email: string,
+    employeePassword: "",
+    employeeFirstName: "",
+   employeeLastName: "",
+    employeeContact: "",
+    employeeAddress: "",
+    employeeImageUrl: ""
     }
      this.loadAllEmployees();
    })

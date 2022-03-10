@@ -4,9 +4,9 @@
             <div class="card-body">   
                 <div class="mb-3 mt-3">
                     <label for="title" class="form-label">Employee ID :</label>
-                    {{ newEmployee.empId }}
+                    {{ newEmployee.employeeId }}
                     </div>
-                <div class="mb-3 mt-3">
+                <!-- <div class="mb-3 mt-3">
                     <label for="email" class="form-label">Employee Email:</label>
                     <input 
                         type="text" 
@@ -19,7 +19,7 @@
                         (change)="test(myEmail)"
                         [(ngModel)]="newEmployee.email">
                     <div *ngIf="!myEmail.valid" class="small text-danger">Employee Email is required!</div>
-                </div>
+                </div> -->
                 <div class="mb-3 mt-3">
                     <label for="password" class="form-label">Employee Password:</label>
                     <input 
@@ -30,7 +30,7 @@
                         name="password"
                         required
                         #myPassword="ngModel"
-                        [(ngModel)]="newEmployee.password">
+                        [(ngModel)]="newEmployee.employeePassword">
                         <div *ngIf="!myPassword.valid" class="small text-danger">employee Password is required!</div>
                     </div>
                     <div class="mb-3 mt-3">
@@ -43,7 +43,7 @@
                             name="firstname"
                             required
                             #myFirstName="ngModel"
-                            [(ngModel)]="newEmployee.firstname">
+                            [(ngModel)]="newEmployee.employeeFirstName">
                             <div *ngIf="!myFirstName.valid" class="small text-danger">employee FirstName is required!</div>
                         </div>
                         
@@ -57,7 +57,7 @@
                         name="lastname"
                         required
                         #myLastName="ngModel"
-                        [(ngModel)]="newEmployee.lastname">
+                        [(ngModel)]="newEmployee.employeeLastName">
                         <div *ngIf="!myLastName.valid" class="small text-danger">Employee LastName is required!</div>
                     </div>
                     <div class="mb-3 mt-3">
@@ -70,7 +70,7 @@
                         name="empContact"
                         required
                         #myContact="ngModel"
-                        [(ngModel)]="newEmployee.empContact">
+                        [(ngModel)]="newEmployee.employeeContact">
                         <div *ngIf="!myContact.valid" class="small text-danger">Employee Contact is required!</div>
                     </div>
                     <div class="mb-3 mt-3">
@@ -83,7 +83,7 @@
                             name="empAddress"
                             required
                             #myAddress="ngModel"
-                            [(ngModel)]="newEmployee.empAddress">
+                            [(ngModel)]="newEmployee.employeeAddress">
                             <div *ngIf="!myAddress.valid" class="small text-danger">Employee Address is required!</div>
                         </div>
                     <div class="mb-3 mt-3">
@@ -96,7 +96,7 @@
                         name="empImageUrl"
                         required
                         #myImage="ngModel"
-                        [(ngModel)]="newEmployee.empImageUrl">
+                        [(ngModel)]="newEmployee.employeeImageUrl">
                         <div *ngIf="!myImage.valid" class="small text-danger">Employee Image URL is required!</div>
                     </div>
                 </div>
@@ -108,3 +108,4 @@
             </div>
         </form>
 </div>
+
